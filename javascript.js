@@ -85,8 +85,28 @@ function visualizeLibrary(){
 
                 didYouRead.checked = false;
             }
-        })
+           
 
+        })
+        editForm.addEventListener('submit', (event,)=>{
+            event.preventDefault();
+            let name = document.getElementById('name-of-author-edit').value;
+            let nameOfBook = document.getElementById('name-of-book-edit').value;
+            let numberOfPages =document.getElementById('number-of-pages-edit').value;
+       
+            if (numberOfPages == ""){numberOfPages = "0";}
+            let didYouRead = document.getElementById('did-you-read-edit').checked;
+        
+            let tempBook = new Book(nameOfBook ,name, numberOfPages, didYouRead);
+            //kod za izbaciti array i ubaciti novi element popraviti
+            
+            
+            
+            EditBookModal.open=false;
+            editForm.reset();
+        
+            visualizeLibrary();
+        })
 
 
         div.appendChild(buttons);
@@ -132,3 +152,6 @@ newBookForm.addEventListener('submit', (event) =>{
 
     visualizeLibrary();
 })
+
+
+
