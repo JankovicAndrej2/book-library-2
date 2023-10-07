@@ -65,7 +65,26 @@ function visualizeLibrary(){
         //tipka za edit
         EditButton.addEventListener('click', ()=>{
             EditBookModal.open = true;
-            editForm
+
+            let nameOfAuthor = document.getElementById("name-of-author-edit");
+            nameOfAuthor.value = library[index].nameOfAuthor;
+
+            let nameOfBook = document.getElementById("name-of-book-edit");
+            nameOfBook.value = library[index].nameOfBook;
+
+            let numberOfPages = document.getElementById("number-of-pages-edit");
+            numberOfPages.value = library[index].numberOfPages;
+
+            let didYouRead = document.getElementById("did-you-read-edit");
+
+            if(library[index].didReadIt === true)
+            {
+                didYouRead.checked = true;   
+            }
+            else{
+
+                didYouRead.checked = false;
+            }
         })
 
 
@@ -79,6 +98,7 @@ function visualizeLibrary(){
 
 addNewBookButton.addEventListener('click', () =>{
     AddNewBookModal.open = true;
+    
 });
 
 
