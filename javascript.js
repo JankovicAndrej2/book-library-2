@@ -11,7 +11,8 @@ const addNewBookButton = document.querySelector('.add-new-book-button');
 const AddNewBookModal = document.querySelector('.add-new-book-dialog');
 const EditBookModal = document.querySelector('.edit-book-dialog');
 
-const closeBookButton = document.querySelector('.close-new-book');
+const closeBookButton = document.querySelectorAll('.close-new-book');
+
 
 var newBookForm = document.getElementById('new-form');
 var editForm = document.getElementById('edit-form');
@@ -54,11 +55,21 @@ function visualizeLibrary(){
         EditButton.appendChild(document.createTextNode("Edit"));
         DeleteButton.append(document.createTextNode("Delete"));
 
+        //tipka za brisanje
         DeleteButton.addEventListener('click', ()=>{
             library.splice(index,1);
             visualizeLibrary();
             newBookForm.reset();
         })
+
+        //tipka za edit
+        EditButton.addEventListener('click', ()=>{
+            EditBookModal.open = true;
+            editForm
+        })
+
+
+
         div.appendChild(buttons);
 
         gridContainer.appendChild(div);
@@ -70,12 +81,18 @@ addNewBookButton.addEventListener('click', () =>{
     AddNewBookModal.open = true;
 });
 
-closeBookButton.addEventListener('click', ()=>{
-    AddNewBookModal.open = false;
-    EditBookModal.open = false;
-    newBookForm.reset();
-    editForm.reset();
-});
+
+
+closeBookButton.forEach((element) =>{
+    element.addEventListener('click', ()=>{
+        AddNewBookModal.open = false;
+        EditBookModal.open = false;
+        editForm.reset();
+        newBookForm.reset();
+    })
+})
+
+
 
 newBookForm.addEventListener('submit', (event) =>{
     event.preventDefault();
@@ -94,5 +111,4 @@ newBookForm.addEventListener('submit', (event) =>{
     newBookForm.reset();
 
     visualizeLibrary();
-});
-
+})
