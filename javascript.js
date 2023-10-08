@@ -22,6 +22,10 @@ var submitEditButton= document.getElementById("edit-book");
 
 var gridContainer = document.querySelector(".grid-container");
 
+var index_of_edit;
+
+
+
 function visualizeLibrary(){
     gridContainer.replaceChildren();
 
@@ -85,33 +89,22 @@ function visualizeLibrary(){
 
                 didYouRead.checked = false;
             }
+            index_of_edit = index;
            
 
         })
-        editForm.addEventListener('submit', (event,)=>{
-            event.preventDefault();
-            let name = document.getElementById('name-of-author-edit').value;
-            let nameOfBook = document.getElementById('name-of-book-edit').value;
-            let numberOfPages =document.getElementById('number-of-pages-edit').value;
-       
-            if (numberOfPages == ""){numberOfPages = "0";}
-            let didYouRead = document.getElementById('did-you-read-edit').checked;
         
-            let tempBook = new Book(nameOfBook ,name, numberOfPages, didYouRead);
-            //kod za izbaciti array i ubaciti novi element popraviti
-            
-            
-            
-            EditBookModal.open=false;
-            editForm.reset();
-        
-            visualizeLibrary();
-        })
 
 
         div.appendChild(buttons);
 
         gridContainer.appendChild(div);
+
+       
+
+
+
+
     })
 }
 
@@ -152,6 +145,30 @@ newBookForm.addEventListener('submit', (event) =>{
 
     visualizeLibrary();
 })
+
+
+editForm.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    let name = document.getElementById('name-of-author-edit').value;
+    let nameOfBook = document.getElementById('name-of-book-edit').value;
+    let numberOfPages =document.getElementById('number-of-pages-edit').value;
+
+    if (numberOfPages == ""){numberOfPages = "0";}
+    let didYouRead = document.getElementById('did-you-read-edit').checked;
+
+    let tempBook = new Book(nameOfBook ,name, numberOfPages, didYouRead);
+    //kod za izbaciti array i ubaciti novi element popraviti
+    library.splice(index_of_edit , 1, tempBook);
+    
+    
+    EditBookModal.open=false;
+    editForm.reset();
+
+    visualizeLibrary();
+})
+
+
+//dodavanje pozadine ovisno o procitanosti knjige
 
 
 
