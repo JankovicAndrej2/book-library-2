@@ -17,7 +17,7 @@ font-face {
 
 
 .header{
-    background-color: #0C1B33;
+    background-color: #003459;
     color: whitesmoke;
     height: 4em;
     display: flex;
@@ -38,6 +38,11 @@ font-face {
     margin-right: 10px;
 }
 
+button:hover, input#did-you-read, input#did-you-read-edit{
+    cursor: pointer;
+}
+
+
 dialog {
     
     margin-top: 40%;
@@ -57,7 +62,7 @@ dialog {
 }
 .two-buttons{
     display: flex;
-    gap: 1vw;
+    gap: 0.5vw;
     margin-bottom: 1vh;
 }
 
@@ -80,13 +85,24 @@ dialog {
     align-items: center;
     font-size: 1.3em;
     padding-top: 10px;
-    font-family: "hankenbook", sans-serif;
+    font-family: "tower_printstandard", sans-serif;
     max-width: 100%;
     text-align-last: center;
     
 }
 
 
+
+button{
+    font-family: "tower_printstandard", sans-serif;
+    border: none;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background: #40798C;
+    color: whitesmoke;
+}
 .name-of-author{
     
     text-align: justify;
@@ -117,6 +133,7 @@ dialog {
 
 .parent
 {
+    color: whitesmoke;
     justify-content: space-between;
     height: 100%;
 }

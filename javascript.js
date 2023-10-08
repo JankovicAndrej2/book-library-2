@@ -109,10 +109,12 @@ function visualizeLibrary(){
         parents.forEach((element) =>{
             if(library[index].didReadIt)
             {
-                parents[index].style.backgroundColor = "green";
+                parents[index].style.borderTop = "10px solid green"
+                parents[index].style.backgroundColor = "#003459";
             }
             else{
-                parents[index].style.backgroundColor = "red";
+                parents[index].style.borderTop = "10px solid #6B0F1A"
+                parents[index].style.backgroundColor = "#003459";
             }
         })
        
