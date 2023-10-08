@@ -100,6 +100,16 @@ function visualizeLibrary(){
 
         gridContainer.appendChild(div);
 
+        let parents = document.querySelectorAll(".parent");
+        parents.forEach((element) =>{
+            if(library[index].didReadIt)
+            {
+                parents[index].style.backgroundColor = "green";
+            }
+            else{
+                parents[index].style.backgroundColor = "red";
+            }
+        })
        
 
 
@@ -168,7 +178,7 @@ editForm.addEventListener('submit', (event)=>{
 })
 
 
-//dodavanje pozadine ovisno o procitanosti knjige
+
 
 
 
