@@ -53,9 +53,14 @@ function visualizeLibrary(){
         div.appendChild(inputNumberOfPages);
         div.classList.add("parent");
 
+        buttons.classList.add("two-buttons");
+
         buttons.appendChild(EditButton);
         buttons.appendChild(DeleteButton);
         
+        
+
+
         EditButton.appendChild(document.createTextNode("Edit"));
         DeleteButton.append(document.createTextNode("Delete"));
 

@@ -55,21 +55,26 @@ dialog {
     display: flex;
     flex-direction: column;
 }
-
+.two-buttons{
+    display: flex;
+    gap: 1vw;
+    margin-bottom: 1vh;
+}
 
 .grid-container{
     display: grid;
     grid-template-columns: repeat(5, 16vw);
     grid-template-rows: repeat(1, 1fr);
-    border: 1px solid black;
+    
     gap: 5vw;
     margin-top: 30px;
-    
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .grid-container> div{
     display: flex;
-    border: 1px solid black;
+    
     height: 300px;
     flex-direction: column;
     align-items: center;
@@ -84,14 +89,26 @@ dialog {
 
 .name-of-author{
     
-    
+    text-align: justify;
+  text-justify: inter-word;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
 }
 .name-of-book{
-    
+    text-align: justify;
+  text-justify: inter-word;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
 }
 
 .number-of-pages{
-    
+    text-align: justify;
+  text-justify: inter-word;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
 }
 
 .number-of-pages::after{
@@ -110,10 +127,4 @@ dialog {
 }
 .edit-button{
     
-}
-.buttons{
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
 }

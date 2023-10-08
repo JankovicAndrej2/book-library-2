@@ -15,14 +15,15 @@
         <dialog class="add-new-book-dialog" open>
             <form action="" id="new-form">
                 <section class="list-of-inputs">
-                        <label for="name-of-author">Name of author: </label>
-                        <input type="text" id="name-of-author" name="name-of-author" style="margin-bottom: 10px;">
-                    
                         <label for="name-of-book">Name of book: </label>
-                        <input type="text" id="name-of-book" name="name-of-book" style="margin-bottom: 10px;">
+                        <input type="text" id="name-of-book" name="name-of-book" style="margin-bottom: 10px;" maxlength="50" required>
+
+                        <label for="name-of-author">Name of author: </label>
+                        <input type="text" id="name-of-author" name="name-of-author" style="margin-bottom: 10px;" maxlength="30" required>
+                    
 
                         <label for="number-of-pages">Number of pages: </label>
-                        <input type="number" id="number-of-pages" name="number-of-pages" style="margin-bottom: 10px;">
+                        <input type="number" id="number-of-pages" name="number-of-pages" style="margin-bottom: 10px;" max="10000" required>
 
                     <section style="padding-bottom: 10px;">
                         <label for="did-you-read">Did you read book</label>
@@ -43,20 +44,21 @@
         <dialog class="edit-book-dialog" >
             <form action="" id="edit-form">
                <section class="list-of-inputs">
-                   <label for="name-of-author-edit">Name of author: </label>
-                   <input type="text" id="name-of-author-edit" name="name-of-author" style="margin-bottom: 10px;">
-               
-               
                    <label for="name-of-book-edit">Name of book: </label>
-                   <input type="text" id="name-of-book-edit" name="name-of-book" style="margin-bottom: 10px;">
-               
+                   <input type="text" id="name-of-book-edit" name="name-of-book" style="margin-bottom: 10px;" maxlength="50" required>
+
+                    <label for="name-of-author-edit">Name of author: </label>
+                     <input type="text" id="name-of-author-edit" name="name-of-author" style="margin-bottom: 10px" maxlength="30" required>
+
+
+                   
               
                    <label for="number-of-pages-edit">Number of pages: </label>
-                   <input type="number" id="number-of-pages-edit" name="number-of-pages" style="margin-bottom: 10px;">
+                   <input type="number" id="number-of-pages-edit" name="number-of-pages" style="margin-bottom: 10px;" maxlength="5" required>
 
                    <section>
                        <label for="did-you-read-edit">Did you read book</label>
-                       <input type="checkbox" id="did-you-read-edit" name="did-you-read" style="margin-bottom: 10px;">
+                       <input type="checkbox" id="did-you-read-edit" name="did-you-read" style="margin-bottom: 10px;" max="10000">
                    </section>
                </section>
                 
